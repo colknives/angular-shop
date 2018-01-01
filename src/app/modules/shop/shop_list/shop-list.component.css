@@ -1,0 +1,32 @@
+.shop-list-container{
+	margin: 0px;
+}
+
+.shop-item-content{
+	margin: 10px;
+	padding: 10px;
+	background-color: #ffffff;
+}
+
+.shop-item-image{
+	background-color: #cccccc;
+	max-height: 500px;
+	height: 300px;
+}
+
+.shop-item-details, .shop-item-cart{
+	padding: 10px;
+}
+
+.shop-item-title{
+	color: #4646ad;
+}
+
+.shop-item-price{
+	color: #ff7c1f;
+}
+
+.shop-item-cart button{
+	background-color: #ff7c1f;
+	color: #ffffff;
+}

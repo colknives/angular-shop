@@ -1,0 +1,38 @@
+.header-container{
+	background-color: #ffffff;
+	padding: 20px;
+}
+
+.header-navigation-container ul{
+	float: right;
+}
+
+.header-navigation-container ul:after{
+	clear: both;
+}
+
+.header-navigation-container ul li{
+	float: left;
+	padding: 0px 20px;
+	list-style: none;
+}
+
+.header-navigation-container ul li a{
+	text-decoration: none;
+	color: #4646ad;
+	font-weight: bold;
+}
+
+.nav-active{
+	color: #ff7c1f !important;
+}
+
+.header-navigation-container ul li a:hover{
+	text-decoration: none;
+	color: #ff7c1f;
+}
+
+.header-search-container button{
+	background-color: #ff7c1f;
+	color: #ffffff;
+}

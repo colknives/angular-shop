@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+	background-color: #f3f3f3;
+}
+
+.shopblue{
+	color: #4646ad;
+}
+
+.shopred{
+	color: #da5656; 
+}
+
+.shoporange{
+	color: #ff7c1f;
+}

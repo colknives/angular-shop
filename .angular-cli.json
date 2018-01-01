@@ -19,9 +19,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "assets/bootstrap/css/bootstrap.min.css",
+        "assets/font-awesome-4.7.0/css/font-awesome.min.css",
+        "assets/sweetalert2/dist/sweetalert2.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/jquery/dist/jquery.js",
+        "assets/sweetalert2/dist/sweetalert2.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

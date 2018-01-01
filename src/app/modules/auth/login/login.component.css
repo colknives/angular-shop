@@ -1,0 +1,37 @@
+.login-section{
+	background-color: #f3f3f3;
+}
+
+.login-form-container{
+	max-width: 500px;
+	margin: 6% auto;
+}
+
+.login-form-header{
+	text-align: center;
+	padding: 30px 0px;
+}
+
+.login-shop-header{
+	text-align: center;
+	padding: 20px;
+}
+
+.login-form-container form{
+	background-color: #ffffff;
+	padding: 20px;
+}
+
+.login-form-container form input{
+	border: 0px;	
+	background-color: #f7f6f9;
+	color: #91899f;
+}
+
+.login-submit-container{
+	text-align: center;
+}
+
+.login-submit-container button{
+	padding: 10px 50px;
+}
