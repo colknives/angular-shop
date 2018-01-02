@@ -31,8 +31,8 @@ export class CartService {
 
     addToCart(product:any, quantity:number){
 
-        this.cart = JSON.parse(localStorage.getItem('cart'));
-        this.data = JSON.parse(localStorage.getItem('data')).info;
+        this.cart = ( localStorage.getItem('cart') != null )? JSON.parse(localStorage.getItem('cart')) : [];
+        this.data = JSON.parse(localStorage.getItem('data'));
         let hasMatch:boolean = false;
 
         //Check if item already exist in cart

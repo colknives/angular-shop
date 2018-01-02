@@ -46,7 +46,8 @@
             </div>
             <div class="shop-cart-checkout-container">
             	<span class="pull-right">
-            		<a href="javascript:void(0);" role="menuitem" class="btn btn-primary">Proceed to Checkout</a>
+            		<a [routerLink]="['/checkout/details']" [routerLinkActive]="['nav-active']" [routerLinkActiveOptions]="{exact:
+true}" [ngClass]="{'disabled':!hasItems}" class="btn btn-primary">Proceed to Checkout</a>
             	</span>
             </div>
 		</div>

@@ -1,0 +1,141 @@
+<section class="shop-checkout-container row">
+	<div class="shop-checkout-delivery-container col-md-12">
+		<div class="shop-checkout-delivery-header">
+			<h3>Delivery Details</h3>
+		</div>
+		<div class="shop-checkout-delivery-content">
+			<form [formGroup]="shippingForm">
+				<div class="row">
+					<div class="col-md-6">
+		                <div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('bldg_unit')">
+		                    <div class="col-md-12">
+		                        <label class="" for="bldg_unit"><strong>Bldg No. Unit / Floor etc.</strong></label>
+		                        <div class="input-group">
+		                            <input formControlName="bldg_unit" class="form-control" id="bldg_unit" name="bldg_unit" placeholder="" type="text">
+		                        </div>
+		                    </div>
+		                    <div class="col-md-12">
+		                        <validation-field 
+		                            [displayError]="this.validationFieldService.isFieldValid('bldg_unit')" 
+		                            field="bldg_unit" 
+		                            [errorMsg]="this.validationFieldService.getError('bldg_unit','Bldg No. Unit / Floor etc.')">
+		                        </validation-field>
+		                    </div>
+		                </div>
+		                <div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('street')">
+		                    <div class="col-md-12">
+		                        <label class="" for="street"><strong>Street</strong></label>
+		                        <div class="input-group">
+		                            <input formControlName="street" class="form-control" id="street" name="street" placeholder="" type="text">
+		                        </div>
+		                    </div>
+		                    <div class="col-md-12">
+		                        <validation-field 
+		                            [displayError]="this.validationFieldService.isFieldValid('street')" 
+		                            field="street" 
+		                            [errorMsg]="this.validationFieldService.getError('street','Street')">
+		                        </validation-field>
+		                    </div>
+		                </div>
+		                <div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('city')">
+		                    <div class="col-md-12">
+		                        <div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('city')">
+		                            <div class="col-md-12">
+		                                <label class="" for="city"><strong>City</strong></label>
+		                                <input formControlName="city" class="form-control" id="city" name="city" placeholder="" type="text">
+		                            </div>
+		                            <div class="col-md-12">
+		                                <validation-field 
+		                                    [displayError]="this.validationFieldService.isFieldValid('city')" 
+		                                    field="city" 
+		                                    [errorMsg]="this.validationFieldService.getError('city','City')">
+		                                </validation-field>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('country')">
+		                    <div class="col-md-12">
+		                        <div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('country')">
+		                            <div class="col-md-12">
+		                                <label class="" for="country"><strong>Country</strong></label>
+		                                <input formControlName="country" class="form-control" id="country" name="country" placeholder="" type="text">
+		                            </div>
+		                            <div class="col-md-12">
+		                                <validation-field 
+		                                    [displayError]="this.validationFieldService.isFieldValid('country')" 
+		                                    field="country" 
+		                                    [errorMsg]="this.validationFieldService.getError('country','Country')">
+		                                </validation-field>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('postal')">
+		                    <div class="col-md-12">
+		                        <div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('postal')">
+		                            <div class="col-md-12">
+		                                <label class="" for="postal"><strong>Post Code</strong></label>
+		                                <input formControlName="postal" class="form-control" id="postal" name="postal" placeholder="" type="text">
+		                            </div> 
+		                            <div class="col-md-12">
+		                                <validation-field 
+		                                    [displayError]="this.validationFieldService.isFieldValid('postal')" 
+		                                    field="postal" 
+		                                    [errorMsg]="this.validationFieldService.getError('postal','Post Code')">
+		                                </validation-field>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-md-6">
+		            	<div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('email')">
+		                    <div class="col-md-12">
+		                        <label class="" for="email"><strong>E-mail Address</strong></label>
+		                        <div class="input-group">
+		                            <input formControlName="email" class="form-control" id="email" name="email" placeholder="" type="text">
+		                        </div>
+		                    </div>
+		                    <div class="col-md-12">
+		                        <validation-field 
+		                            [displayError]="this.validationFieldService.isFieldValid('email')" 
+		                            field="email" 
+		                            [errorMsg]="this.validationFieldService.getError('email','Email')">
+		                        </validation-field>
+		                    </div>
+		                </div>
+		                <div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('phone')">
+		                    <div class="col-md-12">
+		                        <label class="" for="phone"><strong>Phone</strong></label>
+		                        <div class="input-group">
+		                            <input formControlName="phone" class="form-control" id="phone" name="phone" placeholder="" type="text">
+		                        </div>
+		                    </div>
+		                    <div class="col-md-12">
+		                        <validation-field 
+		                            [displayError]="this.validationFieldService.isFieldValid('phone')" 
+		                            field="phone" 
+		                            [errorMsg]="this.validationFieldService.getError('phone','Phone')">
+		                        </validation-field>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="row">
+		        	<div class="col-md-12">
+		        		<div class="form-actions">
+					        <div class="form-group row">
+					            <div class="col-md-12 login-submit-container">
+					            	<a [routerLink]="['/cart']" [routerLinkActive]="['nav-active']" [routerLinkActiveOptions]="{exact:
+true}" class="btn btn-primary pull-left">Back to Cart</a>
+					                <button type="button" class="btn btn-primary pull-right" type="button" (click)="save(shippingForm.value)">Proceed to Confirmation</button>
+					            </div>
+					        </div>
+					    </div>
+		        	</div>
+		        </div>
+			</form>
+		</div>
+	</div>
+</section>

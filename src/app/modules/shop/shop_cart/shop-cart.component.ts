@@ -23,6 +23,7 @@ export class ShopCartComponent implements OnInit {
 
   cart:string[] = [];
   grandTotal:number = 0.00;
+  hasItems:boolean;
 
 
 	ngOnInit(): void {
@@ -36,6 +37,9 @@ export class ShopCartComponent implements OnInit {
   initCart(){
     this.cart = this.cartService.retrieveCart();
     this.grandTotal = this.cartService.getTotal();
+    this.hasItems = ( this.cart.length > 0 )? true : false;
+
+
   }
 
   updateQuantity(productId:number, quantity:number){
@@ -55,7 +59,7 @@ export class ShopCartComponent implements OnInit {
 
     this.cart = this.cartService.removeItem(bookId);
     this.initCart();
-    
+
   }
 
 

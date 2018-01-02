@@ -1,0 +1,19 @@
+.shop-checkout-container{
+	margin: 0px;
+	padding: 10px;
+}
+
+.shop-checkout-delivery-container{
+	background-color: #ffffff;
+	padding: 10px;
+}
+
+.shop-checkout-delivery-header{
+	border-bottom: 1px solid #4646ad;
+	padding: 10px 10px 0px;
+	color: #4646ad;
+}
+
+.shop-checkout-delivery-content{
+	padding: 10px;
+}
