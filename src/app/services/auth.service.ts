@@ -42,5 +42,10 @@ export class AuthService {
         localStorage.removeItem('cart');
     }
 
+    isAuthenticated(){
+
+      return true;
+
+    }
     
 }

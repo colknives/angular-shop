@@ -10,6 +10,10 @@ import { ShopComponent } from './shop.component';
 import { ShopListComponent } from './shop_list/shop-list.component';
 import { ShopCartComponent } from './shop_cart/shop-cart.component';
 
+import { ProductService } from './../../services/product.service';
+import { CartService } from './../../services/cart.service';
+
+
 export const routes: Routes = [
     { 
       path: 'shop',  
@@ -42,7 +46,9 @@ export const routes: Routes = [
     SharedModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    ProductService,
+    CartService
   ],
   bootstrap: [ShopComponent]
 })

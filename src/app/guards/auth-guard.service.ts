@@ -31,18 +31,13 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   checkLogin(url: string): boolean {
 
-    // console.log(localStorage.getItem('data'));
-
-    if(localStorage.getItem('data')){
-
-      // console.log('testset');
-
-      this.router.navigate(['/shop']);
+    if(this.authService.isAuthenticated()){
+      // this.router.navigate(['/shop']);
       return false;
     }
 
     // // not logged in so redirect to login page with the return url
-    this.router.navigate(['/login'], { queryParams: { returnUrl: url }});
+    // this.router.navigate(['/login'], { queryParams: { returnUrl: url }});
     return false;
     
   }

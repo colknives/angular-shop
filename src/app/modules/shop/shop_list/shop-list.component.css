@@ -9,9 +9,14 @@
 }
 
 .shop-item-image{
-	background-color: #cccccc;
+	background-color: #ffffff;
 	max-height: 500px;
-	height: 300px;
+	height: 200px;
+}
+
+.shop-item-image img{
+	width: 100%;
+	max-height: 200px;
 }
 
 .shop-item-details, .shop-item-cart{
