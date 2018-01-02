@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { SharedModule } from './../shared/shared.module';
 
+import { AuthGuard } from '../../guards/auth-guard.service';
 import { ShopComponent } from './shop.component';
 import { ShopListComponent } from './shop_list/shop-list.component';
 import { ShopCartComponent } from './shop_cart/shop-cart.component';
@@ -13,6 +14,7 @@ export const routes: Routes = [
     { 
       path: 'shop',  
       component: ShopComponent, 
+      // canActivate: [AuthGuard],
       children: [
         { path: '', component: ShopListComponent }
       ] 
@@ -20,6 +22,7 @@ export const routes: Routes = [
     { 
       path: 'cart',  
       component: ShopComponent, 
+      // canActivate: [AuthGuard],
       children: [
         { path: '', component: ShopCartComponent }
       ] 
@@ -39,6 +42,7 @@ export const routes: Routes = [
     SharedModule
   ],
   providers: [
+    AuthGuard
   ],
   bootstrap: [ShopComponent]
 })
