@@ -16,21 +16,38 @@
 	                    </tr>
 	                </thead>
 	                <tbody>
-	                    <tr>
-	                        <td>test 1</td>
-	                        <td>test2</td>
-	                        <td>test 3</td>
-	                        <td>test 4</td>
-	                        <td>test 5</td>
+	                	<tr *ngIf="cart.length === 0">
+                            <td colspan="5" class="text-center">Your cart is empty</td>
+                        </tr>
+	                    <tr *ngFor="let cartInfo of cart">
+	                        <td><strong>{{ cartInfo?.name }}</strong></td>
+	                        <td>
+	                        	<input type="number" name="quantity" value="{{ cartInfo?.quantity }}" #quantity (change)="updateQuantity(cartInfo.productid, quantity.value)"/></td>
+	                        <td>{{ cartInfo?.price | currency:'PHP':true }}</td>
+	                        <td>{{ cartInfo?.total | currency:'USD':true }}</td>
+	                        <td>
+	                        	<button class="btn btn-icon btn-outline-default mr-2 mb-2" type="button"><i aria-hidden="true" class="fa fa-times" (click)="removeItem(cartInfo.productid)"></i></button>
+	                        </td>
 	                    </tr>
 	                </tbody>
 	            </table>
             </div>
-            <div class="shop-cart-total-container">
-            	test
+            <div class="shop-cart-total-container row">
+            	<div class="col-md-10">
+                    <span class="pull-right">
+                        <h5><strong>Total Price:</strong></h5>
+                    </span>
+                </div>
+                <div class="col-md-2">
+                    <span class="pull-right text-primary">
+                        <h5><strong>{{ grandTotal | currency:'USD':true }}</strong></h5>
+                    </span>
+                </div>
             </div>
             <div class="shop-cart-checkout-container">
-            	Checkout
+            	<span class="pull-right">
+            		<a href="javascript:void(0);" role="menuitem" class="btn btn-primary">Proceed to Checkout</a>
+            	</span>
             </div>
 		</div>
 	</div>

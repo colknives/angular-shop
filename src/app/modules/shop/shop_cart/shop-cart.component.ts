@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { CartService } from './../../../services/cart.service';
+
 declare var $: any;
 declare var swal: any;
 
@@ -15,12 +17,45 @@ export class ShopCartComponent implements OnInit {
 	constructor(
     public router: Router,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private cartService: CartService,
   ) {}
+
+  cart:string[] = [];
+  grandTotal:number = 0.00;
 
 
 	ngOnInit(): void {
 
+    if( this.cartService.retrieveCart() ){
+      this.initCart();
+    }
+
+  }
+
+  initCart(){
+    this.cart = this.cartService.retrieveCart();
+    this.grandTotal = this.cartService.getTotal();
+  }
+
+  updateQuantity(productId:number, quantity:number){
+
+    if( quantity > 0 ){
+      this.cart = this.cartService.updateQuantity(productId, quantity);
+      this.initCart();
+    }
+    else{
+      swal("Quantity Required", "Please indicate the quantity of items to be ordered.", "warning");
+      this.initCart();
+    }
+
+  }
+
+  removeItem(bookId:number){
+
+    this.cart = this.cartService.removeItem(bookId);
+    this.initCart();
+    
   }
 
 
