@@ -7,16 +7,15 @@ import {
   NavigationExtras,
   CanLoad, Route
 }                           from '@angular/router';
-import { AuthService }      from '../services/auth.service';
+
 
 @Injectable()
-export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
-  constructor(private authService: AuthService, private router: Router) {}
+export class ShopCheckoutGuard implements CanActivate, CanActivateChild, CanLoad {
+  constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    let url: string = state.url;
-
-    return this.checkLogin(url);
+    
+    return this.checkCart();
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -26,18 +25,16 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   canLoad(route: Route): boolean {
     let url = `/${route.path}`;
 
-    return this.checkLogin(url);
+    return this.checkCart();
   }
 
-  checkLogin(url: string): boolean {
-
-    if(this.authService.isAuthenticated()){
+  checkCart(): boolean {
+    if( JSON.parse(localStorage.getItem('cart')).length > 0  ){
       return true;
     }
 
     // // not logged in so redirect to login page with the return url
-    this.router.navigate(['/login'], { queryParams: { returnUrl: url }});
+    this.router.navigate(['/shop']);
     return false;
-    
   }
 }

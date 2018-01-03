@@ -7,6 +7,9 @@ import { SharedModule } from './../shared/shared.module';
 import { ValidationFieldModule } from './../shared/validation-field/validation-field.module';
 
 import { AuthGuard } from '../../guards/auth-guard.service';
+import { ShopCheckoutGuard } from '../../guards/shop-checkout-guard.service';
+import { ShopConfirmationGuard } from '../../guards/shop-confirmation-guard.service';
+
 import { ShopComponent } from './shop.component';
 import { ShopListComponent } from './shop_list/shop-list.component';
 import { ShopCartComponent } from './shop_cart/shop-cart.component';
@@ -24,7 +27,7 @@ export const routes: Routes = [
     { 
       path: 'shop',  
       component: ShopComponent, 
-      // canActivate: [AuthGuard],
+      canActivate: [AuthGuard],
       children: [
         { path: '', component: ShopListComponent }
       ] 
@@ -32,7 +35,7 @@ export const routes: Routes = [
     { 
       path: 'cart',  
       component: ShopComponent, 
-      // canActivate: [AuthGuard],
+      canActivate: [AuthGuard],
       children: [
         { path: '', component: ShopCartComponent }
       ] 
@@ -40,11 +43,23 @@ export const routes: Routes = [
     { 
       path: 'checkout',  
       component: ShopComponent, 
-      // canActivate: [AuthGuard],
+      canActivate: [AuthGuard],
       children: [
-        { path: '', component: ShopCheckoutComponent },
-        { path: 'details', component: ShopCheckoutComponent },
-        { path: 'confirm', component: ShopConfirmComponent },
+        { 
+          path: '', 
+          component: ShopCheckoutComponent,
+          canActivate: [ShopCheckoutGuard], 
+        },
+        { 
+          path: 'details', 
+          component: ShopCheckoutComponent,
+          canActivate: [ShopCheckoutGuard], 
+        },
+        { 
+          path: 'confirm', 
+          component: ShopConfirmComponent,
+          canActivate: [ShopConfirmationGuard], 
+        },
         { path: 'success', component: ShopSuccessComponent }
       ] 
     }
@@ -69,6 +84,8 @@ export const routes: Routes = [
   ],
   providers: [
     AuthGuard,
+    ShopCheckoutGuard,
+    ShopConfirmationGuard,
     ProductService,
     CartService,
     OrderService,

@@ -36,3 +36,7 @@
 	background-color: #ff7c1f;
 	color: #ffffff;
 }
+
+.header-title-container a{
+	text-decoration: none;
+}

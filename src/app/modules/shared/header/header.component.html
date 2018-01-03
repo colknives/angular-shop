@@ -1,19 +1,9 @@
 <section class="header-container">
 	<div class="row">
-		<div class="col-md-4 header-title-container">
-			<h3><span class="shopblue">ANGULAR</span><span class="shoporange">SHOP</span></h3>
+		<div class="col-md-6 header-title-container">
+			<a [routerLink]="['/shop']"><h3><span class="shopblue">ANGULAR</span><span class="shoporange">SHOP</span></h3></a>
 		</div>
-		<div class="col-md-4 header-search-container">
-			<form>
-		        <div class="input-group">
-			      <input type="text" class="form-control" placeholder="Search Item">
-			      <span class="input-group-btn">
-			        <button class="btn btn-default" type="button"><i class="fa fa-search"></i> Search</button>
-			      </span>
-		        </div>
-			</form>
-		</div>
-		<div class="col-md-4 header-navigation-container">
+		<div class="col-md-6 header-navigation-container">
 			<ul>
 				<li><a [routerLink]="['/shop']" [routerLinkActive]="['nav-active']" [routerLinkActiveOptions]="{exact:
 true}">SHOP</a></li>
