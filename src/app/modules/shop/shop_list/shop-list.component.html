@@ -1,3 +1,12 @@
+<section class="shop-list-search-form-container">
+	<div class="shop-list-search-form">
+		<form>
+	        <div class="input-group">
+		      <input type="text" class="form-control" placeholder="Search Item" #search (change)="searchItem(search.value)">
+	        </div>
+		</form>
+	</div>
+</section>
 <section class="shop-list-container row">
 	<ng-container *ngFor="let product of products">
 		<div class="shop-item-container col-md-3">

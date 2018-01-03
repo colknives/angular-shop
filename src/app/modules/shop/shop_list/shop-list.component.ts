@@ -17,7 +17,9 @@ declare var swal: any;
 })
 export class ShopListComponent implements OnInit {
 
-  products:Product;
+  
+  originalProduct:Product;
+  products:any;
 
 	constructor(
     public router: Router,
@@ -33,7 +35,8 @@ export class ShopListComponent implements OnInit {
     this.productService.get()
           .subscribe(
             data => {
-              this.products = data;
+              this.originalProduct = data;
+              this.products = this.originalProduct;
         });
 
   }
@@ -64,6 +67,25 @@ export class ShopListComponent implements OnInit {
         }
         
       }
+
+  }
+
+  searchItem(search){
+
+    let tempProducts:string[] = [];
+    this.products = this.originalProduct;
+
+    for (var index = 0; index < this.products.length; ++index ) {
+
+      let currentItem = this.products[index];
+
+      if( currentItem['name'].indexOf(search) > -1){
+        tempProducts.push(currentItem);
+      }
+       
+    }
+
+    this.products = tempProducts;
 
   }
 

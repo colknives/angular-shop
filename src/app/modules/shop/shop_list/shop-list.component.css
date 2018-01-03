@@ -35,3 +35,12 @@
 	background-color: #ff7c1f;
 	color: #ffffff;
 }
+
+.shop-list-search-form-container{
+	padding: 20px 25px;
+}
+
+.shop-list-search-form{
+	padding: 10px;
+	background-color: #ffffff; 
+}
