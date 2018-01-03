@@ -23,7 +23,7 @@
 	                        <td><strong>{{ cartInfo?.name }}</strong></td>
 	                        <td>
 	                        	<input type="number" name="quantity" value="{{ cartInfo?.quantity }}" #quantity (change)="updateQuantity(cartInfo.productid, quantity.value)"/></td>
-	                        <td>{{ cartInfo?.price | currency:'PHP':true }}</td>
+	                        <td>{{ cartInfo?.price | currency:'USD':true }}</td>
 	                        <td>{{ cartInfo?.total | currency:'USD':true }}</td>
 	                        <td>
 	                        	<button class="btn btn-icon btn-outline-default mr-2 mb-2" type="button"><i aria-hidden="true" class="fa fa-times" (click)="removeItem(cartInfo.productid)"></i></button>

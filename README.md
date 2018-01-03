@@ -1,28 +1,35 @@
-# AngularShop
+# Angular Shop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
+## Introduction
 
-## Development server
+This project is a simple SPA ( Single Page Application ) which simulates a sample online shopping cart.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Used:
+Angular 4
 
-## Code scaffolding
+## Prerequisite
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+The following are needed to install:
 
-## Build
+1. [Node Js](https://nodejs.org/en/)
+2. [Angular CLI](https://cli.angular.io/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Install
 
-## Running unit tests
+To install, clone the repository by running the following command:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+	git clone https://github.com/colknives/angular-shop.git
 
-## Running end-to-end tests
+Next, within the 'angular-shop' folder run the following command in terminal to install all node modules
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+	npm install
 
-## Further help
+Finally, within the 'angular-shop' folder run the following command in terminal to open the site
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+	ng serve --open
+
+## Reference
+
+1. [Angular](https://angular.io/)
+2. [Angular CLI](https://cli.angular.io/)
+3. [Node JS](https://nodejs.org/en/)
