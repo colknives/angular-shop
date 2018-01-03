@@ -1,0 +1,23 @@
+.shop-success-container{
+	margin: 0px;
+	padding: 10px;
+}
+
+.shop-success-order-container{
+	background-color: #ffffff;
+	padding: 10px;
+}
+
+.shop-success-order-header{
+	border-bottom: 1px solid #4646ad;
+	padding: 10px 10px 0px;
+	color: #4646ad;
+}
+
+.shop-success-order-content{
+	padding: 10px;
+}
+
+.order-success-header-container{
+	padding-bottom: 10px 0px;
+}

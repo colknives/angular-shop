@@ -1,0 +1,59 @@
+<section class="shop-confirm-container row">
+	<div class="shop-confirm-order-container col-md-12">
+		<div class="shop-confirm-order-header">
+			<h3>Confirm</h3>
+		</div>
+		<div class="shop-confirm-order-content">
+			<div>
+				<p>
+                    <span>{{ shipData.bldg_unit }} {{ shipData.street }} {{ shipData.city }} {{ shipData.country }} {{ shipData.postal }}</span><br />
+                    <span>Contact Person: {{ shipData.contact_person }}</span><br />
+                    <span>Email: {{ shipData.email }}</span><br />
+                    <span>Phone: {{ shipData.phone }}</span><br />
+                </p>
+			</div>
+			<div class="shop-cart-item-content">
+				<div class="shop-cart-table-container">
+					<table class="table">
+		                <thead class="text-center">
+		                    <tr>
+		                        <th>Item Name</th>
+		                        <th>Quantity</th>
+		                        <th>Unit Cost</th>
+		                        <th>Total</th>
+		                    </tr>
+		                </thead>
+		                <tbody>
+		                	<tr *ngIf="cart.length === 0">
+	                            <td colspan="5" class="text-center">Your cart is empty</td>
+	                        </tr>
+		                    <tr *ngFor="let cartInfo of cart">
+		                        <td><strong>{{ cartInfo?.name }}</strong></td>
+		                        <td>{{ cartInfo?.quantity }}</td>
+		                        <td>{{ cartInfo?.price | currency:'PHP':true }}</td>
+		                        <td>{{ cartInfo?.total | currency:'USD':true }}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	            </div>
+	            <div class="shop-cart-total-container row">
+	            	<div class="col-md-10">
+	                    <span class="pull-right">
+	                        <h5><strong>Total Price:</strong></h5>
+	                    </span>
+	                </div>
+	                <div class="col-md-2">
+	                    <span class="pull-right text-primary">
+	                        <h5><strong>{{ grandTotal | currency:'USD':true }}</strong></h5>
+	                    </span>
+	                </div>
+	            </div>
+	            <div class="shop-cart-checkout-container">
+            		<a [routerLink]="['/checkout/details']" [routerLinkActive]="['nav-active']" [routerLinkActiveOptions]="{exact:
+true}" class="btn btn-primary pull-left">Back to Shipping Details</a>
+					<button type="button" class="btn btn-primary pull-right" type="button" (click)="submit()">Submit Order</button>
+	            </div>
+			</div>
+		</div>
+	</div>
+</section>

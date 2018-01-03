@@ -19,6 +19,7 @@ declare var swal: any;
 export class ShopCheckoutComponent implements OnInit {
 
   shippingForm: FormGroup;
+  shipData:any;
 
 	constructor(
     public router: Router,
@@ -29,6 +30,8 @@ export class ShopCheckoutComponent implements OnInit {
   ) {
 
     this.shippingForm = fb.group({
+      'contact_person': new FormControl(null, [
+        Validators.required]),
       'email': new FormControl(null, [
         Validators.required,
         Validators.email]),
@@ -53,14 +56,41 @@ export class ShopCheckoutComponent implements OnInit {
 
 	ngOnInit(): void {
 
+    if( localStorage.getItem('shipDetail') ){
+      this.shipData = JSON.parse(localStorage.getItem('shipDetail'));
+
+      this.shippingForm.patchValue({
+        'contact_person': this.shipData.contact_person,
+        'email': this.shipData.email,
+        'phone': this.shipData.phone,
+        'bldg_unit': this.shipData.bldg_unit,
+        'street': this.shipData.street,
+        'city': this.shipData.city,
+        'country': this.shipData.country,
+        'postal': this.shipData.postal
+      });
+
+    }
+
   }
 
-  save(){
+  save(data){
 
     if (this.shippingForm.valid) {
 
-      // this.getRegion();
-      // this.nextTab();
+      this.shipData = {
+          'bldg_unit':data['bldg_unit'],
+          'city':data['city'],
+          'country':data['country'],
+          'contact_person':data['contact_person'],
+          'email':data['email'],
+          'phone':data['phone'],
+          'postal':data['postal'],
+          'street':data['street']
+      };
+
+      localStorage.setItem('shipDetail', JSON.stringify(this.shipData)); 
+      this.router.navigate(['/checkout/confirm']);
 
     } else {
       this.validationFieldService.validateAllFormFields(this.shippingForm);

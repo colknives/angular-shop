@@ -1,5 +1,10 @@
 export class Order {
-	orderid:number;
-	productid:number;
-	quantity:number;
+	bldg_unit:string;
+	city:string;
+	country:string;
+	contact_person:string;
+	email:string;
+	phone:string;
+	postal:string;
+	street:string;
 }

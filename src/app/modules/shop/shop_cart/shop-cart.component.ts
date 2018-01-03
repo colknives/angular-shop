@@ -38,8 +38,6 @@ export class ShopCartComponent implements OnInit {
     this.cart = this.cartService.retrieveCart();
     this.grandTotal = this.cartService.getTotal();
     this.hasItems = ( this.cart.length > 0 )? true : false;
-
-
   }
 
   updateQuantity(productId:number, quantity:number){

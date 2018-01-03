@@ -90,6 +90,21 @@
 		                </div>
 		            </div>
 		            <div class="col-md-6">
+		            	<div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('contact_person')">
+		                    <div class="col-md-12">
+		                        <label class="" for="contact_person"><strong>Contact Person</strong></label>
+		                        <div class="input-group">
+		                            <input formControlName="contact_person" class="form-control" id="contact_person" name="contact_person" placeholder="" type="text">
+		                        </div>
+		                    </div>
+		                    <div class="col-md-12">
+		                        <validation-field 
+		                            [displayError]="this.validationFieldService.isFieldValid('contact_person')" 
+		                            field="contact_person" 
+		                            [errorMsg]="this.validationFieldService.getError('contact_person','Contact Person')">
+		                        </validation-field>
+		                    </div>
+		                </div>
 		            	<div class="form-group row" [ngClass]="this.validationFieldService.displayFieldCss('email')">
 		                    <div class="col-md-12">
 		                        <label class="" for="email"><strong>E-mail Address</strong></label>

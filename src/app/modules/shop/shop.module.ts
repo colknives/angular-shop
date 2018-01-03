@@ -11,9 +11,12 @@ import { ShopComponent } from './shop.component';
 import { ShopListComponent } from './shop_list/shop-list.component';
 import { ShopCartComponent } from './shop_cart/shop-cart.component';
 import { ShopCheckoutComponent } from './shop_checkout/shop-checkout.component';
+import { ShopConfirmComponent } from './shop_confirm/shop-confirm.component';
+import { ShopSuccessComponent } from './shop_success/shop-success.component';
 
 import { ProductService } from './../../services/product.service';
 import { CartService } from './../../services/cart.service';
+import { OrderService } from './../../services/order.service';
 import { ValidationFieldService } from './../../services/validation-field.service';
 
 
@@ -40,7 +43,9 @@ export const routes: Routes = [
       // canActivate: [AuthGuard],
       children: [
         { path: '', component: ShopCheckoutComponent },
-        { path: 'details', component: ShopCheckoutComponent }
+        { path: 'details', component: ShopCheckoutComponent },
+        { path: 'confirm', component: ShopConfirmComponent },
+        { path: 'success', component: ShopSuccessComponent }
       ] 
     }
 ];
@@ -50,7 +55,9 @@ export const routes: Routes = [
     ShopComponent,
     ShopListComponent,
     ShopCartComponent,
-    ShopCheckoutComponent
+    ShopCheckoutComponent,
+    ShopConfirmComponent,
+    ShopSuccessComponent
   ],
   imports: [
   	RouterModule.forRoot(routes),
@@ -64,6 +71,7 @@ export const routes: Routes = [
     AuthGuard,
     ProductService,
     CartService,
+    OrderService,
     ValidationFieldService
   ],
   bootstrap: [ShopComponent]
