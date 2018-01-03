@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
 import { BrowserModule } from '@angular/platform-browser';
 
+import { LoginGuard } from '../../guards/login-guard.service';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from '../../services/auth.service';
 
@@ -11,6 +12,7 @@ export const routes: Routes = [
     { 
       path: 'login',  
       component: LoginComponent, 
+      canActivate: [LoginGuard],
     }
 ];
 
@@ -23,10 +25,11 @@ export const routes: Routes = [
     CommonModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    LoginGuard
   ],
   bootstrap: [LoginComponent]
 })

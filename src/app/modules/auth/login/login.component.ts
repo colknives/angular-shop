@@ -43,9 +43,6 @@ export class LoginComponent implements OnInit {
     this.authService.login(data.username,data.password)
       .subscribe(
           data => {
-
-            console.log('testsetset');
-
             this.router.navigate(['/shop']);
           });
 

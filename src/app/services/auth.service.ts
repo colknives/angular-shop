@@ -40,11 +40,12 @@ export class AuthService {
         // remove user from local storage to log user out
         localStorage.removeItem('data');
         localStorage.removeItem('cart');
+        localStorage.removeItem('shipDetail');
     }
 
     isAuthenticated(){
 
-      return true;
+      return ( localStorage.getItem('data') )? true : false;
 
     }
     

@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'as-header',
@@ -6,4 +10,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+	constructor(
+	    public router: Router,
+	    private route: ActivatedRoute,
+	    private location: Location,
+	    public authService: AuthService
+	  ) {}
+
+	logout(){
+		this.authService.logout();
+		this.router.navigate(['/login']);
+	}
+
+
 }

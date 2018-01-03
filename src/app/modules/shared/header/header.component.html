@@ -9,7 +9,7 @@
 true}">SHOP</a></li>
 				<li><a [routerLink]="['/cart']" [routerLinkActive]="['nav-active']" [routerLinkActiveOptions]="{exact:
 true}">CART</a></li>
-				<li><a [routerLink]="['/login']">LOGOUT</a></li>
+				<li><a (click)="logout()">LOGOUT</a></li>
 			</ul>
 		</div>
 	</div>
