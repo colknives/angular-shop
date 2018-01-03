@@ -30,7 +30,7 @@ export class ShopConfirmationGuard implements CanActivate, CanActivateChild, Can
 
   checkDetails(): boolean {
 
-    if( JSON.parse(localStorage.getItem('cart')).length > 0 && JSON.parse(localStorage.getItem('shipDetail')) > 0 ){
+    if( JSON.parse(localStorage.getItem('cart')).length > 0 && JSON.parse(localStorage.getItem('shipDetail')).email != "" ){
       return true;
     }
 

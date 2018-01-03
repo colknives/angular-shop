@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormGroup, FormBuilder, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { appConfig } from './../../../app.config';
 
 import { AuthService } from '../../../services/auth.service';
 
@@ -40,12 +41,23 @@ export class LoginComponent implements OnInit {
 
   login(data){
 
-    this.authService.login(data.username,data.password)
+    if( appConfig.username == data.username && appConfig.password == data.password ){
+
+      this.authService.login(data.username,data.password)
       .subscribe(
           data => {
             this.router.navigate(['/shop']);
           });
 
+
+    }
+    else{
+
+      swal("Login failed", "Failed to logged in using provided username and password", "error");
+
+    }
+
+    
   }
 
 
