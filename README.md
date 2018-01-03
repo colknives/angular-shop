@@ -28,6 +28,13 @@ Finally, within the 'angular-shop' folder run the following command in terminal 
 
 	ng serve --open
 
+## User Credentials
+
+The following are the built in user credentials used in the project
+
+Username: admin
+Password: password123
+
 ## Reference
 
 1. [Angular](https://angular.io/)
