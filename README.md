@@ -32,8 +32,8 @@ Finally, within the 'angular-shop' folder run the following command in terminal 
 
 The following are the built in user credentials used in the project
 
-Username: admin
-Password: password123
+	Username: admin
+	Password: password123
 
 ## Reference
 
